@@ -47,11 +47,3 @@
     "vitest": "^5.0.5"
   }
 }
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "test": "vitest",
-    "start": "vite preview --host 0.0.0.0"
-  }
-}
