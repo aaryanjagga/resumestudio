@@ -1,0 +1,6 @@
+{
+  "name": "Resume Studio",
+  "description": "Minimalist, local-first resume builder with six bespoke templates, live A4 preview, and client-side PDF export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
