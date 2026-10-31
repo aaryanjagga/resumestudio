@@ -1,79 +1,88 @@
 # Resume Studio
 
-A minimalist, local-first, privacy-focused resume builder designed for speed, elegant typography, and reliable browser-based data persistence.
+**Professional resumes. Private by design.**
 
-Build, customize, preview, and export professional resumes — all directly in your browser, without mandatory accounts, remote databases, or telemetry.
+Resume Studio is a minimalist, privacy-focused resume builder built with React, TypeScript, and Vite. It helps users create, customize, preview, and export professional resumes directly in their browser.
 
-## ✨ Core Features
+Designed around local-first storage, clean typography, and a streamlined workflow, Resume Studio keeps resume management simple without requiring user accounts or a remote database.
 
-### 🔒 Privacy-First & Local Storage
-- **100% Local-First:** No remote database, mandatory accounts, telemetry, or paywalls.
-- **IndexedDB Persistence:** Automatically saves multiple resumes locally with debounced writes, versioning, and revision tracking.
-- **Complete Data Control:** Export backups, restore previous data, or clear locally stored information with safety confirmation.
+## Features
 
-### 🎨 Six Bespoke Resume Templates
+### Resume Templates
 
-1. **Classic ATS** — A clean, single-column layout with standard headings and an emphasis on applicant tracking system compatibility.
-2. **Modern Clean** — A contemporary, balanced design with subtle accent lines and refined typography.
-3. **Developer Tech** — Technical typography, prominent GitHub and portfolio links, and structured presentation of engineering achievements.
-4. **Executive Brief** — Elegant *Newsreader* serif typography, strategic summaries, and leadership-focused content.
-5. **Compact Density** — A space-efficient layout designed to maximize content while preserving readability.
-6. **Editorial Journal** — An asymmetrical editorial grid with distinctive typography and a polished visual hierarchy.
+Choose from six purpose-built templates:
 
-### 📄 Dual PDF Export
-- **One-Click PDF Download:** Generate and download PDF files named `Resume_<Name>.pdf` using `html2pdf.js` with A4 formatting.
-- **Native Browser Printing:** Use `window.print()` with print-optimized CSS for browser-native PDF generation and printing.
+- **Classic ATS** — A clean, single-column layout designed with applicant tracking system compatibility in mind.
+- **Modern Clean** — A balanced, contemporary design with subtle accent details.
+- **Developer Tech** — A technical layout highlighting projects, GitHub profiles, portfolio links, and engineering achievements.
+- **Executive Brief** — Refined serif typography, strategic summaries, and leadership-focused presentation.
+- **Compact Density** — A space-efficient layout that prioritizes readable content.
+- **Editorial Journal** — An asymmetrical editorial design with distinctive typography and visual hierarchy.
 
-### 👁️ Live A4 Preview
-- Real-time resume preview with zoom controls from **50% to 130%**.
-- Fit-to-screen viewing mode.
-- Continuous content-height measurement.
-- Warnings when content exceeds a single A4 page.
-- A4 boundary guides for better page-layout control.
+### Live Preview & Customization
 
-### 🎯 Custom Accent Palettes
+- Preview resume changes in real time.
+- Adjust preview zoom from 50% to 130%.
+- Use fit-to-screen viewing.
+- Monitor content height against an A4 page boundary.
+- Choose from six accent palettes:
+  - Deep Indigo
+  - Modern Slate
+  - Classic Navy
+  - Forest Emerald
+  - Crimson
+  - Warm Charcoal
 
-Personalize templates using curated accent colors:
+### PDF Export
 
-- Deep Indigo
-- Modern Slate
-- Classic Navy
-- Forest Emerald
-- Crimson
-- Warm Charcoal
+Export resumes using either of two methods:
 
-### 💾 Backup & Restore
-- One-click, versioned JSON backup downloads.
-- Schema-validated JSON imports.
-- **Merge Mode:** Import resumes while automatically avoiding ID collisions.
-- **Replace All Mode:** Replace existing local resume data with imported data.
-- Clear all locally stored data with explicit safety confirmation.
+- **PDF Download:** Generate a downloadable PDF using `html2pdf.js`.
+- **Browser Print:** Use native browser printing with print-specific CSS for printing or saving as PDF.
+
+### Local-First Data Management
+
+- Automatically save multiple resumes in browser storage.
+- Use IndexedDB for persistent local data storage.
+- Track revisions and versions.
+- Export versioned JSON backups.
+- Import validated JSON backups using Merge or Replace All modes.
+- Clear local resume data with safety confirmation.
+
+### Privacy
+
+- No mandatory user accounts.
+- No required remote database.
+- Resume data remains in browser storage during normal operation.
+- Portable JSON backups provide a way to transfer or restore data.
+
+Privacy depends on the application's actual implementation and its dependencies. Review any third-party integrations before making stronger guarantees about network activity.
 
 ---
 
-## 🛠️ Technical Stack
+## Tech Stack
 
 | Category | Technology |
 |---|---|
-| Framework | React 19 |
+| Frontend | React 19 |
+| Language | TypeScript |
 | Build Tool | Vite 8 |
-| Language | TypeScript (Strict Mode) |
 | Routing | React Router 7 |
 | Styling | Tailwind CSS v4 |
-| Local Storage | IndexedDB with `idb` |
-| Runtime Validation | Zod |
-| PDF Export | `html2pdf.js` |
-| Print Support | Native browser printing with CSS |
+| Local Database | IndexedDB |
+| Storage Library | `idb` |
+| Schema Validation | Zod |
+| PDF Generation | `html2pdf.js` |
 | Icons | Lucide React |
 | Testing | Vitest, React Testing Library, JSDOM, `fake-indexeddb` |
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Install the following before running the project:
 
 - [Node.js](https://nodejs.org/)
 - npm, included with Node.js
@@ -99,53 +108,59 @@ npm install
 npm run dev
 ```
 
-Open the local URL displayed in your terminal to access Resume Studio.
+Open the local URL printed in the terminal to use Resume Studio.
 
 ---
 
-## 🧪 Development Commands
+## Development Commands
 
-| Command | Description |
+| Command | Purpose |
 |---|---|
-| `npm run dev` | Start the development server |
-| `npm test` | Run unit and integration tests |
-| `npm run lint` | Run the configured type-checking script |
-| `npm run build` | Create an optimized production build |
+| `npm run dev` | Start the local development server |
+| `npm test` | Run the configured test suite |
+| `npm run lint` | Run the configured lint or type-checking script |
+| `npm run build` | Generate the production build |
+
+Run the production build before deployment to catch compilation and type-checking errors.
 
 ---
 
-## 🌐 Static Hosting & Deployment
+## Deployment
 
-Resume Studio is a client-side application that can be deployed to static hosting providers without requiring a dedicated application server or remote database.
+Resume Studio is designed as a client-side application and can be deployed to static hosting platforms.
 
-### Create a Production Build
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-The optimized production files are generated in the `dist/` directory.
+Vite generates the production assets in the `dist/` directory.
 
-You can deploy this directory to:
+### Supported Hosting Options
 
-- [Cloudflare Pages](https://pages.cloudflare.com/)
+- [Render Static Sites](https://render.com/docs/static-sites)
 - [Vercel](https://vercel.com/)
 - [Netlify](https://www.netlify.com/)
 - GitHub Pages
-- Any standard HTTP web server, such as Nginx or Caddy
-- Amazon S3 with CloudFront
+- Any compatible static web server
 
-### SPA Routing Configuration
+### Render Deployment
 
-Because Resume Studio uses client-side routing, configure your hosting provider to serve `index.html` as a fallback for application routes.
+For a Render Static Site, use these settings:
 
-**Nginx**
+| Setting | Value |
+|---|---|
+| Build Command | `npm install && npm run build` |
+| Publish Directory | `dist` |
 
-```nginx
-location / {
-    try_files $uri $uri/ /index.html;
-}
-```
+A Static Site does not require a Start Command.
+
+If deploying through a Web Service instead, configure a suitable server command and ensure it listens on the port assigned by Render.
+
+### Client-Side Routing
+
+If the application uses client-side routes, configure the hosting provider to serve `index.html` as a fallback for valid application routes.
 
 **Netlify — `_redirects`**
 
@@ -166,25 +181,27 @@ location / {
 }
 ```
 
-**GitHub Pages:** Configure an appropriate SPA fallback strategy if your application uses routes that must work when opened directly. Also configure Vite's `base` option for the repository URL when deploying to a project subpath.
+For GitHub Pages, configure Vite's `base` option when deploying under a repository subpath and implement an appropriate SPA fallback if needed.
 
 ---
 
-## 🔐 Storage & Privacy
+## Data Storage & Backups
 
-Resume Studio is designed to keep resume information under the user's control.
+Resume data is stored in the browser's IndexedDB database.
 
-- **Local Storage:** Resume data is stored in the browser's IndexedDB database on the user's device.
-- **No Cloud Sync:** The application does not require a remote database or cloud-based resume storage.
-- **No Mandatory Account:** Users can build and manage resumes without creating an account.
-- **Portable Backups:** Export resumes as JSON to transfer or restore data.
-- **User-Controlled Deletion:** Locally stored data can be cleared through the application's provided controls.
+Keep these points in mind:
 
-**Important:** Local browser storage is not a substitute for a backup. Clearing site data, using a different browser profile, or switching devices may make saved resumes unavailable. Export a JSON backup regularly to protect your work.
+- Browser storage is specific to the browser profile and device.
+- Clearing site data may permanently remove locally saved resumes.
+- Switching devices does not automatically transfer local data.
+- Export JSON backups regularly to protect your work.
+- Keep backup files in a secure location because they may contain personal information.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
+
+The following is an illustrative overview; the actual directory structure may vary.
 
 ```text
 resume-studio/
@@ -201,19 +218,24 @@ resume-studio/
 └── README.md
 ```
 
-*The directory structure above is illustrative. Actual files and folders may differ depending on the current implementation.*
+---
+
+## Project Principles
+
+Resume Studio is built around four core principles:
+
+1. **Privacy** — Keep resume management local-first.
+2. **Simplicity** — Make creating and managing resumes straightforward.
+3. **Readability** — Prioritize clear typography and useful layouts.
+4. **User Control** — Support portable backups and local data management.
 
 ---
 
-## 🎯 Project Goals
+## License
 
-Resume Studio focuses on four principles:
-
-1. **Privacy:** Keep resume data local to the user's browser.
-2. **Simplicity:** Provide an intuitive workflow for creating professional resumes.
-3. **Quality:** Deliver clean typography, reusable templates, and reliable PDF exports.
-4. **Control:** Give users ownership of their data through local persistence and portable backups.
+No license information is specified here. Add a `LICENSE` file and update this section before distributing the project under an open-source license.
 
 ---
 
-**Resume Studio** — Professional resumes. Private by design. Built for simplicity.
+**Resume Studio — Create confidently. Customize effortlessly. Keep your data close.**
+
