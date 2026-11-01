@@ -231,11 +231,6 @@ Resume Studio is built around four core principles:
 
 ---
 
-## License
-
-No license information is specified here. Add a `LICENSE` file and update this section before distributing the project under an open-source license.
-
----
 
 **Resume Studio — Create confidently. Customize effortlessly. Keep your data close.**
 
